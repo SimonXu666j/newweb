@@ -1,0 +1,21 @@
+package main
+
+import (
+	"io"
+	"net/http"
+	"os/exec"
+	"log"
+	)
+
+func reLaunch()  {
+	
+}
+func firstPage(w http.ResponseWriter,r *http.Request)  {
+	io.WriteString(w,"<h1>Hello,this is my first page!</h1>")
+
+}
+func main()  {
+	http.HandleFunc("/",firstPage)
+	http.ListenAndServe(":5000",nil)
+
+}
